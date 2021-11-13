@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export default function UserList() {
   const [userIndex, setIndex] = useState(0);
-  
+
   return (
     <ul className="users items-list-nav">
       {users.map((u, i) => {
