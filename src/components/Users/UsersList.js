@@ -1,9 +1,15 @@
 import { useState, Fragment } from "react";
 import { users } from "../../static.json";
+import { FaArrowRight } from "react-icons/fa";
 
 export default function UsersList() {
   const [userIndex, setUserIndex] = useState(0);
   const user = users[userIndex];
+  const userss = [...new Set(users.map((b) => b.name))];
+
+  function nextUser() {
+    setUserIndex((userIndex + 1) % userss.length);
+  }
 
   return (
     <Fragment>
@@ -27,6 +33,12 @@ export default function UsersList() {
           </div>
         </div>
       )}
+      <p>
+        <button className="btn" onClick={nextUser} autoFocus>
+          <FaArrowRight />
+          <span>Next</span>
+        </button>
+      </p>
     </Fragment>
   );
 }
