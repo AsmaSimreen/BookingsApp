@@ -4,6 +4,6 @@ export default function BookingsPage() {
     <main className="bookings-page">
       <p>Bookings!</p>
       <WeekPicker date={new Date()} />
-    </main>
+      </main>
   );
 }
